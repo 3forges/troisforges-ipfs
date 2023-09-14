@@ -32,9 +32,20 @@ do
     echo "$var"
 done
 echo ''
+echo '# --- # --- # --- # --- # --- # --- # --- # --- # '
+echo '# --- # --- # --- # --- # --- # --- # --- # --- # '
+echo "  CONTENT OF [/usr/local/bin/start_ipfs] : "
+echo '# --- # --- # --- # --- # --- # --- # --- # --- # '
+ls -alh /usr/local/bin/container_init_run
+ls -alh /usr/local/bin/start_ipfs
+cat /usr/local/bin/start_ipfs
+echo '# --- # --- # --- # --- # --- # --- # --- # --- # '
+echo '# --- # --- # --- # --- # --- # --- # --- # --- # '
+echo ''
+echo ''
 echo 'Start command is :'
 echo ''
 echo "[/usr/local/bin/start_ipfs $@]"
 echo ''
-
+echo '# --- # --- # --- # --- # --- # --- # --- # --- # '
 /usr/local/bin/start_ipfs $@
