@@ -4,6 +4,10 @@
 # 1. There's an fs-repo, and initializes one if there isn't.
 # 2. The API and Gateway are accessible from outside the container.
 # ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/start_ipfs"]
+
+# chmod a+rw /data/ipfs/config
+# chmod a+rw -R /data/ipfs/
+chmod a+rw -R $IPFS_PATH
 echo ''
 echo ''
 echo "Configuring CORS of IPFS/KUBO server"
@@ -48,7 +52,6 @@ echo ''
 echo "[/usr/local/bin/start_ipfs $@]"
 echo ''
 echo '# --- # --- # --- # --- # --- # --- # --- # --- # '
-chmod a+rw /data/ipfs/config
-chmod a+rw -R /data/ipfs/
+
 
 /usr/local/bin/start_ipfs $@
