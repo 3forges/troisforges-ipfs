@@ -1,0 +1,14 @@
+version: '3.4'
+
+# This is an example docker-compose file to quickly 
+# rebuild a custom IPFS/KUBO image, eg to customize entrypoint.
+
+services:
+##################################################################################
+#############  BUILDING CUSTOM IMAGE
+######################################
+  kubo_build:
+    image: troisforges/ipfs-kubo:0.0.1
+    build:
+      context: ./.pesto/containers/ipfs/kubo/
+      dockerfile: Dockerfile
