@@ -24,6 +24,9 @@ echo "Content of [$IPFS_PATH/config] of IPFS/KUBO server : "
 echo ''
 echo '# ------------------------------------------------------ # '
 echo ''
+# chmod a+rw /data/ipfs/config
+# chmod a+rw -R /data/ipfs/
+chmod a+rw -R $IPFS_PATH
 ls -alh $IPFS_PATH/config
 
 echo ''
