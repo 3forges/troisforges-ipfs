@@ -14,7 +14,7 @@ echo "Configuring CORS of IPFS/KUBO server"
 echo ''
 # ---
 # https://docs.ipfs.tech/reference/kubo/cli/#ipfs-daemon
-ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://onedev.pokus.io:5001", "http://localhost:3000", "http://127.0.0.1:5001", "https://webui.ipfs.io"]'
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://onedev.pokus.io:8080", "http://onedev.pokus.io:5001", "http://localhost:3000", "http://127.0.0.1:5001", "https://webui.ipfs.io"]'
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["GET", "PATCH", "DELETE", "PUT", "POST"]'
 
 # ---
