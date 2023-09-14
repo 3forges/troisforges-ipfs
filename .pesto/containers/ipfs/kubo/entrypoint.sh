@@ -48,4 +48,7 @@ echo ''
 echo "[/usr/local/bin/start_ipfs $@]"
 echo ''
 echo '# --- # --- # --- # --- # --- # --- # --- # --- # '
+chmod a+rw /data/ipfs/config
+chmod a+rw -R /data/ipfs/
+
 /usr/local/bin/start_ipfs $@
