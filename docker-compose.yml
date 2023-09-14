@@ -26,11 +26,20 @@ version: '3.4'
 #
 # During the first start, default configurations are created for all peers.
 
+
+services:
+##################################################################################
+#############  BUILDING CUSTOM IMAGE
+######################################
+  kubo_build:
+    image: troisforges/ipfs-kubo:0.0.1
+    build:
+      context: ./.pesto/containers/ipfs/kubo/
+      dockerfile: Dockerfile
+
 ##################################################################################
 ## NGINX ################################################################
 ##################################################################################
-
-services:
   nginx:
     image: nginx:1.19.2-alpine
     hostname: nginx
