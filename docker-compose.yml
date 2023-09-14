@@ -48,7 +48,12 @@ services:
     ports:
       # - "9000:9000"
       # - "9001:9001"
+      # ---
+      # Exposes API
       - "0.0.0.0:5001:5001"
+      # ---
+      # Exposes Gateway
+      - 0.0.0.0:8080:8080"
     depends_on:
       - ipfs0
       - ipfs1
