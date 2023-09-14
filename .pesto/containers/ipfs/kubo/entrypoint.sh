@@ -16,7 +16,17 @@ echo ''
 # https://docs.ipfs.tech/reference/kubo/cli/#ipfs-daemon
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://onedev.pokus.io:5001", "http://localhost:3000", "http://127.0.0.1:5001", "https://webui.ipfs.io"]'
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["GET", "PATCH", "DELETE", "PUT", "POST"]'
-ipfs config --json Gateway.PublicGateways '["http://onedev.pokus.io:8080"]'
+
+# ---
+# https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes
+# ipfs config --json Gateway.PublicGateways '["http://onedev.pokus.io:8080", "http://localhost:8080"]'
+ipfs config --json Gateway.PublicGateways '{
+    "onedev.pokus.io": {
+        "UseSubdomains": true,
+        "Paths": ["/ipfs", "/ipns", "/api"]
+    }
+}'
+ipfs config --json Gateway.NoDNSLink true
 # ipfs config --json API.HTTPHeaders.X-Special-Header "[\"so special :)\"]"
 # ipfs config --json Gateway.HTTPHeaders.X-Special-Header "[\"so special :)\"]"
 echo ''
