@@ -22,7 +22,7 @@ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["GET", "PATCH"
 # ipfs config --json Gateway.PublicGateways '["http://onedev.pokus.io:8080", "http://localhost:8080"]'
 ipfs config --json Gateway.PublicGateways '{
     "onedev.pokus.io": {
-        "UseSubdomains": true,
+        "UseSubdomains": false,
         "Paths": ["/ipfs", "/ipns", "/api"]
     }
 }'
