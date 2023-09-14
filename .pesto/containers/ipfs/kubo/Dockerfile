@@ -19,7 +19,7 @@ RUN mkdir -p /usr/local/bin/pesto && chown ipfs:users /usr/local/bin/pesto
 COPY entrypoint.sh /usr/local/bin/pesto
 RUN chmod 0755 /usr/local/bin/pesto/entrypoint.sh
 RUN chmod a+x /usr/local/bin/pesto/*.sh
-
+RUN chown ipfs:users $IPFS_PATH
 # This just makes sure that:
 # 1. There's an fs-repo, and initializes one if there isn't.
 # 2. The API and Gateway are accessible from outside the container.
