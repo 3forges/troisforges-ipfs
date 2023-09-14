@@ -23,8 +23,9 @@ RUN chmod a+x /usr/local/bin/pesto/*.sh
 # This just makes sure that:
 # 1. There's an fs-repo, and initializes one if there isn't.
 # 2. The API and Gateway are accessible from outside the container.
-ENTRYPOINT ["/usr/local/bin/pesto/entrypoint.sh", "--"]
-
+# ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/start_ipfs"]
+# ENTRYPOINT ["/usr/local/bin/pesto/entrypoint.sh", "--"]
+ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/pesto/entrypoint.sh"]
 # # Healthcheck for the container
 # # QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn is the CID of empty folder
 # HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \

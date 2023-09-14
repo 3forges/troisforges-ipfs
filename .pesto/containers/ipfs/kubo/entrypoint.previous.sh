@@ -17,7 +17,7 @@ done
 echo ''
 echo 'Start command is :'
 echo ''
-echo "[/usr/local/bin/start_ipfs $@]"
+echo "[/sbin/tini $@]"
 echo ''
 
-/usr/local/bin/start_ipfs $@
+/sbin/tini -g $@
