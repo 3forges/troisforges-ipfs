@@ -17,7 +17,7 @@ done
 echo ''
 echo 'Start command is :'
 echo ''
-echo "[npm start $@]"
+echo "[/sbin/tini $@]"
 echo ''
 
-/sbin/tini $@
+/sbin/tini -g $@
