@@ -7,7 +7,7 @@ export CLUSTER_SECRET=$(od -vN 32 -An -tx1 /dev/urandom | tr -d ' \n')
 docker-compose -f ./docker-compose.build.yml build \
                --build-arg KUBO_VERSION=latest \
                kubo_build
-docker-compose up -d
+docker-compose up -d --force-recreate
 ```
 * When the stack is up, we can already query the `ipfs/kubo` api :
 
