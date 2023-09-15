@@ -21,7 +21,7 @@ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["GET", "PATCH"
 # https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes
 # ipfs config --json Gateway.PublicGateways '["http://onedev.pokus.io:8080", "http://localhost:8080"]'
 ipfs config --json Gateway.PublicGateways '{
-    "onedev.pokus.io:8080": {
+    "onedev.pokus.io": {
         "UseSubdomains": false,
         "Paths": ["/ipfs", "/ipns", "/api"]
     }
