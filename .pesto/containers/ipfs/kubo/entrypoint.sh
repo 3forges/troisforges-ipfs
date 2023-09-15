@@ -28,7 +28,15 @@ ipfs config --json Gateway.PublicGateways '{
 }'
 ipfs config --json Gateway.RootRedirect '/'
 ipfs config --json Gateway.NoFetch false
-ipfs config --json Gateway.NoDNSLink true
+ipfs config --json Gateway.NoDNSLink false
+ipfs config --json Addresses.API "/ip4/onedev.pokus.io/tcp/5001"
+ipfs config --json Addresses.Gateway "/ip4/onedev.pokus.io/tcp/8080"
+# ipfs1         |   "Addresses": {
+# ipfs1         |     "API": "/ip4/0.0.0.0/tcp/5001",
+# ipfs1         |     "Announce": [],
+# ipfs1         |     "AppendAnnounce": [],
+# ipfs1         |     "Gateway": "/ip4/0.0.0.0/tcp/8080",
+
 # ipfs config --json API.HTTPHeaders.X-Special-Header "[\"so special :)\"]"
 # ipfs config --json Gateway.HTTPHeaders.X-Special-Header "[\"so special :)\"]"
 echo ''
