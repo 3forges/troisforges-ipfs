@@ -28,7 +28,7 @@ ipfs config --json Gateway.PublicGateways '{
 }'
 ipfs config --json Gateway.RootRedirect '/'
 ipfs config --json Gateway.NoFetch true
-ipfs config --json Gateway.NoDNSLink false
+ipfs config --json Gateway.NoDNSLink true
 # ipfs config --json API.HTTPHeaders.X-Special-Header "[\"so special :)\"]"
 # ipfs config --json Gateway.HTTPHeaders.X-Special-Header "[\"so special :)\"]"
 echo ''
