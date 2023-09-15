@@ -21,13 +21,14 @@ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["GET", "PATCH"
 # https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes
 # ipfs config --json Gateway.PublicGateways '["http://onedev.pokus.io:8080", "http://localhost:8080"]'
 ipfs config --json Gateway.PublicGateways '{
-    "onedev.pokus.io": {
+    "onedev.pokus.io:8080": {
         "UseSubdomains": false,
         "Paths": ["/ipfs", "/ipns", "/api"]
     }
 }'
+ipfs config --json Gateway.RootRedirect '/'
 ipfs config --json Gateway.NoFetch true
-ipfs config --json Gateway.NoDNSLink true
+ipfs config --json Gateway.NoDNSLink false
 # ipfs config --json API.HTTPHeaders.X-Special-Header "[\"so special :)\"]"
 # ipfs config --json Gateway.HTTPHeaders.X-Special-Header "[\"so special :)\"]"
 echo ''
@@ -45,6 +46,15 @@ echo ' Checking IPFS config [ipfs config show]'
 echo ''
 ipfs config show
 echo '# ------------------------------------------------------ # '
+# --- 
+# https://github.com/ipfs/kubo/blob/master/docs/environment-variables.md#ipfs_http_routers
+# -
+# export IPFS_HTTP_ROUTERS="http://0.0.0.0:8080" ipfs daemon
+# ipfs config Routing.Type auto
+# 
+
+
+# -----------------
 # chmod a+rw /data/ipfs/config
 # chmod a+rw -R /data/ipfs/
 chmod a+rw -R $IPFS_PATH
