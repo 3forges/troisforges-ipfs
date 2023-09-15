@@ -46,6 +46,19 @@ echo ' Checking IPFS config [ipfs config show]'
 echo ''
 ipfs config show
 echo '# ------------------------------------------------------ # '
+
+echo '# ------------------------------------------------------ # '
+echo ''
+echo ''
+echo ' Mime Types for Nginx Conf'
+echo ''
+cat <<EOF >./mime.addons.types
+types {
+    text/plain     txt, js, mjs;
+}
+EOF
+cp ./mime.addons.types /etc/nginx/mime.addons.types
+echo '# ------------------------------------------------------ # '
 # --- 
 # https://github.com/ipfs/kubo/blob/master/docs/environment-variables.md#ipfs_http_routers
 # -
