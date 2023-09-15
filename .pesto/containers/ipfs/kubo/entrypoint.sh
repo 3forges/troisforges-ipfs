@@ -61,8 +61,9 @@ echo '# ------------------------------------------------------ # '
 # export IPFS_HTTP_ROUTERS="http://0.0.0.0:8080" ipfs daemon
 # ipfs config Routing.Type auto
 # 
-
-
+# export IPFS_HTTP_ROUTERS="http://0.0.0.0:8080"
+export IPFS_HTTP_ROUTERS="http://onedev.pokus.io:8080"
+ipfs config --json Routing.Type auto
 # -----------------
 # chmod a+rw /data/ipfs/config
 # chmod a+rw -R /data/ipfs/
